@@ -3,8 +3,7 @@ session_start();
 if(isset($_POST['search']))
 {
     $valueToSearch = $_POST['valueToSearch'];
-    // search in all table columns
-    // using concat mysql function
+    
     $query = "SELECT * FROM `listings` WHERE CONCAT(`id`, `Name`, `Town`) LIKE '%".$valueToSearch."%'";
     $search_result = filterTable($query);
     
